@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+
+
+*{
+    overflow-x: hidden;
+} 
+
+.divLogin{
+    margin-top: 10%;
+    visibility: hidden;
+    animation: entradaLogin;
+    animation-delay: 2s;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    border-radius: 10%;
+    box-shadow: 5px 7px 5px lightcyan;
+    color: white;
+    font-family: 'EB Garamond', serif;
+    border: solid 1px white;
+    background: rgba(0, 91, 150, 0.2); 
+    backdrop-filter: blur(8px);
+}
+
+@keyframes entradaLogin {
+    0%{
+        transform:scale(0);
+        visibility: hidden;
+    }
+    
+    100%{
+        transform:scale(1);
+        visibility: visible;
+        visibility: inherit;
+    }
+}
+
+.tituloIndex{
+    margin-top: 7%;
+    border-right: 0.1em solid blue;
+    white-space: nowrap;
+    margin-left: 2%;
+    letter-spacing: .15em;
+    animation: entradaTitulo 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+    animation-fill-mode: forwards;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+@keyframes entradaTitulo {
+    from { width: 0;}
+    to{width: 100%;}
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: blue; }
+}
+
+.tituloHome {
+    width: 100%;
+    margin-top: 7%;
+    margin-left: 10%;
+    white-space: nowrap;
+    letter-spacing: .15em;
+    animation: entradaTituloHome 3.5s steps(40, end),
+    blink-caretHome .75s step-end normal;
+    animation-fill-mode:forwards;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+@keyframes entradaTituloHome {
+    from { width: 0;}
+    to{width: 100%;}
+}
+
+@keyframes blink-caretHome {
+    0% , 15% , 45% , 75% , 100% { 
+        border-right: 0.1em solid blue;
+        border-color: blue; }
+
+    30% , 60% , 70%, 90%{border-color: transparent }
+    
+    100%{border-color: transparent;
+    animation-timing-function: linear;}
+}
+
+.color-change-4x{animation:color-change-6x 10s linear infinite alternate both}
+
+@keyframes color-change-6x{
+    0%, 100%{background-color: #639CD9;}
+    25%{background-color: #5454C5;}
+    50%{background-color: #342056;}
+    75%{background-color: #220E24;}
+}
+
+.criarConta{
+    padding-left: 20%;
+    color: white;
+}
+
+.linkCriarConta{
+    color: white;
+    text-decoration: none;
+}
+
+.linkCriarConta:hover{
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+footer{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.scale-up-center{animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both}
+@keyframes scale-up-center{0%{transform:scale(.0)}100%{transform:scale(1)}}
+
+.tituloRecado{
+    overflow-y: hidden;
+}
+
+.divAddRecado{
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    right: 1rem;
+    bottom: 3rem;
+}
+
+.modalCriarRecado{
+    animation:entradaModalRecado .4s cubic-bezier(.39,.575,.565,1.000) both
+}
+
+@keyframes entradaModalRecado {
+    0%{margin-bottom: -200%;}
+    100%{margin-bottom: auto;}
+    
+}
