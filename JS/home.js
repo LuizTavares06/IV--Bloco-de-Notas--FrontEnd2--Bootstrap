@@ -4,14 +4,20 @@ if (!usuarioLogado) {
     alert("Você precisa estar logado para utilizar essa aplicação!");
     window.location.href = "index.html";
 };
+//LIMPAR EXEMPLOS
+document.getElementById('removeEx1').addEventListener('click', () => {
+    document.getElementById('exRecado1').remove();
+})
+document.getElementById('removeEx2').addEventListener('click', () => {
+    document.getElementById('exRecado2').remove();
+})
 
 //CARREGAR DADOS DO USUARIO
 document.getElementById('tituloHome').innerHTML = `Olá ${usuarioLogado.nomeUsuario}!`;
 document.addEventListener('DOMContentLoaded', () => {
     const recadosUsuarioLogado = pegarRecadosUsuario();
     if (recadosUsuarioLogado.length > 0) {
-        document.getElementById('exRecado1').remove();
-        document.getElementById('exRecado2').remove();
+        limparExemplos();
         carregarDadosUsuario();
     }
 })
@@ -94,6 +100,8 @@ function confereCriarRecado(e) {
         alert('Já existe um recado com esse ID, por favor tente com outro número.')
         return
     }
+
+    limparExemplos()
     recadosUsuario.push(novoRecado);
     salvarRecadosUsuario(recadosUsuario);
     criarRecadoHTML(novoRecado);
@@ -239,6 +247,11 @@ function indiceUsuarioLogado() {
     });
 
     return indiceUser
+}
+
+function limparExemplos() {
+    document.getElementById('exRecado1').remove();
+    document.getElementById('exRecado2').remove();
 }
 
 //LOGOUT

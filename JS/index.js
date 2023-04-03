@@ -106,6 +106,8 @@ function criarContaNoStorage() {
 
     listaUsuarios.push(usuario);
     atualizarUsuarios(listaUsuarios);
+    sessionStorage.setItem("UsuarioLogado", JSON.stringify(usuario));
+    window.location.href = "./home.html";
 };
 
 function atualizarUsuarios(listaUsuarios) {
