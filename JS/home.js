@@ -23,8 +23,16 @@ function carregarDadosUsuario() {
     }
 }
 
+//CHAMA CRIAR RECADO
+const btnChamaCriarRecado = document.getElementById('chamaCriarRecado')
+const modalCriarRecado = document.getElementById('modalCriarRecado');
+
+btnChamaCriarRecado.addEventListener('click', () => {
+    modalCriarRecado.classList.add('scale-up-center');
+})
+
 //CRIAR NOVO RECADO
-// const modalCriarRecado = new bootstrap.Modal(document.getElementById('modalCriarRecado'), {});
+// const modalCriarRecado = new bootstrap.Modal(('modalCriarRecado'), {});
 const btnCriarRecado = document.getElementById('btnCriarRecado');
 btnCriarRecado.addEventListener('click', confereCriarRecado);
 
@@ -80,7 +88,6 @@ function confereCriarRecado(e) {
         descricao: descricaoRecado.value
     }
 
-
     const recadosUsuario = pegarRecadosUsuario();
     const existeId = recadosUsuario.some((recado) => recado.id === idRecado.value);
     if (existeId) {
@@ -106,7 +113,7 @@ function criarRecadoHTML(recado) {
     novoCardBody.setAttribute('class', 'card-body');
 
     const novoTituloRecado = document.createElement('h5');
-    novoTituloRecado.setAttribute('class', 'tituloRecado card-title');
+    novoTituloRecado.setAttribute('class', 'overflow-hidden card-title');
     novoTituloRecado.innerHTML = `${recado.titulo}`;
 
     const novaDescricao = document.createElement('p');
@@ -179,21 +186,15 @@ function salvarRecadoEdit(idEdit) {
     if (indexEdit >= 0) {
         const recadoEdit = {
             id: idEdit,
-            novoTitulo: tituloEdit.value,
-            novaDescricao: descricaoEdit.value
+            titulo: tituloEdit.value,
+            descricao: descricaoEdit.value
         }
 
-        recadosUsuario[indexEdit].titulo === recadoEdit.novoTitulo;
-        recadosUsuario[indexEdit].descricao === recadoEdit.novaDescricao;
-        console.log(recadoEdit)
+        recadosUsuario.splice(indexEdit, 1, recadoEdit)
     }
-
-    console.log(recadosUsuario[indexEdit]);
-    console.log(recadosUsuario)
-
-
+    alert('Recado editado com sucesso!')
     salvarRecadosUsuario(recadosUsuario)
-    // window.location.href = 'home.html'
+    window.location.href = 'home.html'
 }
 
 //APAGAR RECADO

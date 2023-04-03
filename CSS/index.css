@@ -1,11 +1,43 @@
+/* GLOBAIS */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
-
-
 
 *{
     overflow-x: hidden;
-} 
+}
 
+.color-change-5x{
+    animation:color-change-5x 10s linear infinite alternate both
+}
+
+@keyframes color-change-5x{
+    0%, 100%{background-color: #639CD9;}
+    25%{background-color: #5454C5;}
+    50%{background-color: #342056;}
+    75%{background-color: #220E24;}
+}
+
+.scale-up-center{
+    animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both
+}
+
+@keyframes scale-up-center{
+    0%{
+    transform:scale(.0)}100%{transform:scale(1)}
+}
+
+footer{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+
+/* INDEX */
 .divLogin{
     margin-top: 10%;
     visibility: hidden;
@@ -59,6 +91,23 @@
     50% { border-color: blue; }
 }
 
+.criarConta{
+    padding-left: 20%;
+    color: white;
+}
+
+.linkCriarConta{
+    color: white;
+    text-decoration: none;
+}
+
+.linkCriarConta:hover{
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+/* HOME */
 .tituloHome {
     width: 100%;
     margin-top: 7%;
@@ -88,63 +137,10 @@
     animation-timing-function: linear;}
 }
 
-.color-change-4x{animation:color-change-6x 10s linear infinite alternate both}
-
-@keyframes color-change-6x{
-    0%, 100%{background-color: #639CD9;}
-    25%{background-color: #5454C5;}
-    50%{background-color: #342056;}
-    75%{background-color: #220E24;}
-}
-
-.criarConta{
-    padding-left: 20%;
-    color: white;
-}
-
-.linkCriarConta{
-    color: white;
-    text-decoration: none;
-}
-
-.linkCriarConta:hover{
-    text-decoration: underline;
-    color: blue;
-    cursor: pointer;
-}
-
-footer{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
-
-.scale-up-center{animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both}
-@keyframes scale-up-center{0%{transform:scale(.0)}100%{transform:scale(1)}}
-
-.tituloRecado{
-    overflow-y: hidden;
-}
-
 .divAddRecado{
     height: 60px;
     width: 60px;
     position: fixed;
     right: 1rem;
     bottom: 3rem;
-}
-
-.modalCriarRecado{
-    animation:entradaModalRecado .4s cubic-bezier(.39,.575,.565,1.000) both
-}
-
-@keyframes entradaModalRecado {
-    0%{margin-bottom: -200%;}
-    100%{margin-bottom: auto;}
-    
 }
